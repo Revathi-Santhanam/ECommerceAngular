@@ -1,0 +1,16 @@
+<div class="container my-5">
+    <p class="fs-1">Products</p>
+
+    <div class="row" id="productsDisplay">
+      <div class="col-4  mt-4" *ngFor="let product of products">
+        <div
+          class="border rounded p-2 bg-primary-subtle border-primary-subtle w-100 justify-content-evenly h-100 d-flex flex-column"
+        >
+          <img [src]="product.image" alt="image" class="ps-5 ms-3"  width="250px" height="200px" />
+          <p class="fs-5 my-1 mt-2 text-center">{{ product.title }}</p>
+          <p class="fs-4 my-1 mb-2 text-center">₹ {{ product.price }}</p>
+          <button class="btn btn-success" (click)="addToCart(product.id)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>

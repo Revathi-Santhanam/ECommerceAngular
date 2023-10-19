@@ -1,0 +1,49 @@
+<navbar></navbar>
+
+<div class="container mt-5 mb-5">
+  <div class="d-flex justify-content-center row">
+    <div class="col-md-8">
+      <div class="p-2">
+        <h4>Shopping cart</h4>
+      </div>
+      <div
+        class="d-flex flex-row justify-content-around align-items-center p-2 bg-white mt-4 px-3 rounded"
+        *ngFor="let c of cartProducts"
+      >
+        <div class="mr-1">
+          <img class="rounded" [src]="c.image" width="70" />
+        </div>
+        <div
+          class="d-flex flex-column w-25 h-25 align-items-center product-details"
+        >
+          {{ c.title }}
+        </div>
+        <div class="d-flex flex-row align-items-center qty">
+          <i class="fa fa-minus text-danger pe-3"></i>
+          <h5 class="text-grey mt-1 mr-1 ml-1 pe-3">{{ c.count }}</h5>
+          <i class="fa fa-plus text-success"></i>
+        </div>
+        <div>
+          <h5 class="text-grey">₹{{ c.price*c.count }}</h5>
+        </div>
+        
+      </div>
+      <!-- <div class="d-flex flex-column pt-5 ps-5 justify-content-between mb-5"
+      *ngFor="let c of cartProducts">
+        <h5 class="text-uppercase">Total price</h5>
+        <h5>₹ {{totalPrice(c.price,c.count)}}</h5>
+      </div> -->
+      <div class="d-flex flex-row align-items-center mt-3  ps-5 bg-white rounded">
+        <button
+          class="btn btn-warning btn-block btn-lg ml-2 pay-button"
+          type="button"
+          (click)="checkOut()"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer></footer>

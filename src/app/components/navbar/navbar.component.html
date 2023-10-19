@@ -1,0 +1,50 @@
+<!-- Navbar -->
+<nav
+  class="navbar navbar-expand-lg navbar-light"
+  style="background-color: #151215"
+>
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand text-white ms-4 mt-2 mt-lg-0" routerLink="/home">
+        <img
+          src="https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/12/AdobeStock_113126068-Converted.jpg"
+          alt=""
+          width="60px"
+          height="50px"
+          class="me-2"
+        />Cart4U
+      </a>
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+      <a class="btn text-white me-3" id="cartCount" routerLink="/cart">
+        <!-- cart -->
+        Cart-{{getCount()>0?getCount():""}}
+      </a>
+    </div>
+    <div class="d-flex align-items-center">
+    
+      <a class="btn text-white me-3" routerLink="/orders"> Orders </a>
+    </div>
+    <div class="d-flex align-items-center">
+      <!-- logout -->
+      <button
+        class="btn text-white me-3"
+        routerLink="/login"
+        (click)="logout()"
+      >
+        logout
+      </button>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

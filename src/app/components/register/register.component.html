@@ -1,0 +1,161 @@
+<section class="vh-50 bg-image">
+  <div class="mask d-flex align-items-center h-50 gradient-custom-3">
+    <div class="container h-50">
+      <div class="row d-flex justify-content-center align-items-center h-50">
+        <div class="col-6 pb-3 pt-3">
+          <div class="card" style="border-radius: 15px">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-4">Create an account</h2>
+
+              <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+                <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example1cg"
+                    >Your Name</label
+                  >
+                  <input
+                    type="text"
+                    id="form3Example1cg"
+                    class="form-control"
+                    name="userName"
+                    minlength="4"
+                    ngModel
+                    required
+                    userName
+                    #modelUserName="ngModel"
+                    [ngClass]="
+                      modelUserName.invalid && modelUserName.dirty
+                        ? 'is-invalid'
+                        : ''
+                    "
+                  />
+                  <div *ngIf="modelUserName.invalid" class="invalid-feedback">
+                    Please enter valid credentials
+                  </div>
+                </div>
+
+                <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example3cg"
+                    >Your Email</label
+                  >
+                  <input
+                    type="email"
+                    id="form3Example3cg"
+                    class="form-control form-control-lg"
+                    name="email"
+                    ngModel
+                    required
+                    email
+                    #modelEmail="ngModel"
+                    [ngClass]="
+                      modelEmail.invalid && modelEmail.dirty ? 'is-invalid' : ''
+                    "
+                  />
+                  <div *ngIf="modelEmail.invalid" class="invalid-feedback">
+                    Please enter valid credentials
+                  </div>
+                </div>
+                <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example4cg"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    id="form3Example4cg"
+                    class="form-control form-control-lg"
+                    name="password"
+                    ngModel
+                    required
+                    minlength="8"
+                    #modelPassword="ngModel"
+                    [ngClass]="
+                      modelPassword.invalid && modelPassword.dirty
+                        ? 'is-invalid'
+                        : ''
+                    "
+                  />
+                  <div
+                    *ngIf="modelPassword.errors?.['required'] && modelPassword.dirty"
+                    class="invalid-feedback"
+                  >
+                    Please Enter a valid password
+                  </div>
+
+                  <div
+                    *ngIf="modelPassword?.errors?.['minlength']"
+                    class="invalid-feedback"
+                  >
+                    Please enter atleast
+
+                    {{modelPassword?.errors?.['minlength']?.['requiredLength']
+
+                    }}
+
+                    characters.
+                  </div>
+                </div>
+
+                <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example4cdg"
+                    >Confirm password</label
+                  >
+                  <input
+                    type="password"
+                    id="form3Example4cdg"
+                    class="form-control form-control-lg"
+                    name="confirmPassword"
+                    ngModel
+                    required
+                    
+                    #modelConfirmPassword="ngModel"
+                    [ngClass]="
+                      modelConfirmPassword.invalid && modelConfirmPassword.dirty
+                        ? 'is-invalid'
+                        : ''
+                    "
+                  />
+                  <div
+                  *ngIf="modelPassword.value !== modelConfirmPassword.value"
+                  class="text-danger"
+                >
+                  Password Mismatch
+                </div>
+                </div>
+                
+
+                <div class="form-check d-flex justify-content-center mb-3">
+                  <input
+                    class="form-check-input me-2"
+                    type="checkbox"
+                    value=""
+                    id="form2Example3cg"
+                  />
+                  <label class="form-check-label" for="form2Example3g">
+                    I agree all statements in
+                    <a href="#!" class="text-body"><u>Terms of service</u></a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button
+                    type="submit"
+                    class="btn btn-success mb-3 text-white"
+                    [disabled]="registerForm.invalid"
+                  >
+                    Register
+                  </button>
+                </div>
+
+                <p class="text-center text-muted mb-0">
+                  Have already an account?
+                  <a routerLink="/login" class="fw-bold text-body"
+                    ><u>Login here</u></a
+                  >
+                </p>
+              </form>
+            </div>
+          </div>    
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

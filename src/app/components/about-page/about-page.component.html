@@ -1,0 +1,160 @@
+<div class="container-fluid justify-content-center">
+  <h2 class="container-fluid text-center text-white bg-dark pt-5 pb-5">
+    About My Cart4U website
+  </h2>
+
+  <div class="ps-5 ms-5">
+    <h5 class="text-body pt-3"><u>About the application:</u></h5>
+    <div class="ps-4">
+      <p><u>Outline:</u></p>
+      <ul>
+        <li>
+          <p>
+            Cart4U website is a basic E-Commerce webpage, used to view products
+            in the home page by login into the website.
+          </p>
+        </li>
+        <li>
+          <P>So that you can view and add the products to the cart. </P>
+        </li>
+        <li>
+          <p>
+            If you are a new user , you can register using signUp page and you
+            can login to do the operations
+          </p>
+        </li>
+        <li>
+          <p>
+            Here, users are stored in local storage.If you are new user while
+            registering your details will get store in local storage.
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="row pt-5">
+      <div class="col -4 ps-5 ms-5">
+        <div>
+          <h6><u>Technology used:</u></h6>
+          <ul>
+            <li>HTML 5</li>
+            <li>CSS3</li>
+            <li>BootStrap v-5.3</li>
+            <li>Angular Js 16</li>
+          </ul>
+        </div>
+        <div class="pt-5">
+          <h6><u>Guard Created:</u></h6>
+          <p><b>Auth Guard</b>-used to do authentication</p>
+        </div>
+      </div>
+      <div class="col-4 pe-5">
+        <h6><u>Components Created:</u></h6>
+        <ul>
+          <li>
+            <b>NavBar Component</b>- used to do navigation operations to the
+            particular page.
+          </li>
+          <li>
+            <b>Footer Component</b>-used to display footer section to
+            UserInterface.
+          </li>
+          <li><b>Login Component</b>-used to login existing user.</li>
+          <li><b>Register Component</b>-used to register as new user.</li>
+          <li><b>Home Component</b>-used to display home page for the user.</li>
+          <li>
+            <b>Product Component</b>-used to display products in the home page.
+          </li>
+          <li><b>Orders Component</b>-used to display orders detail in the orders page.</li>
+        </ul>
+      </div>
+      <div class="col-4 pe-5 me-5">
+        <h6><u>Services Created:</u></h6>
+        <ul>
+          <li><b>Auth Service</b>-used to check is the user is logged in.</li>
+          <li><b>Cart Service</b>-used to cart page methods.</li>
+          <li><b>Product Service</b>-used to Product page methods.</li>
+          <li><b>Storage Service</b>-used to Storage page methods.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-5 ps-5 pe-5">
+      <h5><u>Steps used and challenges faced to build this application:-</u></h5>
+      <ol class="pt-3">
+        <li>
+          <p>
+            This Project consists of multiple components such as Home, Cart,
+            Login, Register ,product and for the navigation <br>between components
+            Routing has been used via app routing module by providing respective
+            routes in the route array.
+          </p>
+        </li>
+        <li>
+          <p>
+            The respective service and models required for the application has
+            been generated using the commands in git bash
+          </p>
+        </li>
+        <li>
+          <p>
+            Used Template Driven form validation for the login and register
+            page.
+          </p>
+        </li>
+        <li>
+          <p>
+            For fetching the products an Api call has been made using HTTPClient
+            (GET) request.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Stored the product, cart and order details in the Local Storage .
+            Stored the user details in the Local Storage.
+          </p>
+        </li>
+        <li>
+          <p>
+            The add to cart and orders functionality logic has been designed in
+            a logic that each user can access only his/her<br> cart and order
+            details in his/her login.
+          </p>
+        </li>
+        <li>
+          <p>
+            No logged in user can access cart order and log out so for that
+            CanActivate() method of auth guard in angular.<br> For this process
+            local storage has been used.
+          </p>
+        </li>
+        <li>
+          <p>
+            Every Authenticated user can access cart to add or remove product
+            also check out product to see it the orders page.
+          </p>
+        </li>
+      </ol>
+      <h6 class="pt-3"><u>Challenges Faced:</u></h6>
+      <p>
+        Frequent API call - Used Observer() method to reduce the API call by
+        fetching and checking it with the local storage.<br> Handling Cart for
+        individual user.
+      </p>
+      <p>
+        To login and access the website use the below credentials 
+      </p>
+      <p>
+        <b>email :
+          "revathi@gmail.com" <br>password : "revathii" </b>
+      </p>
+      Click the below button to visit
+      site!
+    </div>
+
+    <div class="pt-3 ps-5 pb-5">
+      <button class="btn btn-success" (click)="move()">
+        Move to Application
+      </button>
+    </div>
+  </div>
+</div>
