@@ -75,12 +75,12 @@ export class StorageService {
  
  
 
-  getCartProducts(): Product[] {
-    return JSON.parse(localStorage.getItem('cartproducts') as string);
-  }
-  setCartProducts(cart: Product[]) {
-    localStorage.setItem('cartproducts', JSON.stringify(cart));
-  }
+  // getCartProducts(): Product[] {
+  //   return JSON.parse(localStorage.getItem('cartproducts') as string);
+  // }
+  // setCartProducts(cart: Product[]) {
+  //   localStorage.setItem('cartproducts', JSON.stringify(cart));
+  // }
   // removeCartProducts():void{
   //   localStorage.removeItem('cartproducts')
   // }

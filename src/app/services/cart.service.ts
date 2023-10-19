@@ -74,17 +74,14 @@ export class CartService {
           user: loggedInUser,
           cart: [{ ...product, count: 1 }],
           orderProducts: [],
-          orders: []
+          orders: [],
         };
         this.cart.push(newCart);
         console.log(this.cart);
-       
+
         this.storageService.setCart(this.cart);
-        this.storageService.setOrders(this.cart)
-       
-        
+        this.storageService.setOrders(this.cart);
       }
-      
     }
     // for (let pro of this.cart) {
     //   if (pro.user.id === loggedInUser.id)
@@ -92,55 +89,54 @@ export class CartService {
     // }
     // this.storageService.setCartProducts(this.addProductsToLocal(this.cart));
   }
-
-  // addProductsToLocal(cart: Cart[]): Product[] {
-  //   let newCarts: Product[] = [];
-
-  //   let loggedInUser: User = this.authService.getLoggedInUser();
-  //   for (let pro of cart) {
-  //     if (pro.user.id === loggedInUser.id) {
-  //       newCarts.push(...pro.cart);
-  //     }
-  //   }
-  //   console.log(newCarts);
-  //   return newCarts;
-  // }
-
-  // addToCart(id: number): void {
-  //   let products: Product[] = this.storageService.getCachedProducts();
-  //   let product: Product | undefined = products.find((p) => p.id === id);
-  //   console.log(id);
-
-  //   if (product) {
-  //     let cartProduct: Product | undefined = this.cart.find(
-  //       (c) => c.id === product?.id
-  //     );
-  //     console.log(cartProduct);
-
-  //     if (cartProduct) {
-  //       let newCart: Product[] = [];
-  //       for (let product of this.cart) {
-  //         if (product.id === id) {
-  //           newCart.push({ ...product, count: product.count + 1 });
-  //         } else {
-  //           newCart.push(product);
-  //         }
-  //       }
-  //       this.cart = newCart;
-  //     } else {
-  //       this.cart.push({ ...product, count: 1 });
-  //       console.log('else');
-  //     }
-  //   }
-  //   console.log(this.cart);
-  //   // this.storageService.saveCartProducts(this.cart);
-  // }
-
-  // delCartProduct(id: number) {
-  //   this.storageService.removeProduct(id);
-  //   console.log('deleted');
-  // }
-  // checkOut(){
-  //   this.storageService.loadOrders(this.orders);
-  // }
 }
+// addProductsToLocal(cart: Cart[]): Product[] {
+//   let newCarts: Product[] = [];
+
+//   let loggedInUser: User = this.authService.getLoggedInUser();
+//   for (let pro of cart) {
+//     if (pro.user.id === loggedInUser.id) {
+//       newCarts.push(...pro.cart);
+//     }
+//   }
+//   console.log(newCarts);
+//   return newCarts;
+// }
+
+// addToCart(id: number): void {
+//   let products: Product[] = this.storageService.getCachedProducts();
+//   let product: Product | undefined = products.find((p) => p.id === id);
+//   console.log(id);
+
+//   if (product) {
+//     let cartProduct: Product | undefined = this.cart.find(
+//       (c) => c.id === product?.id
+//     );
+//     console.log(cartProduct);
+
+//     if (cartProduct) {
+//       let newCart: Product[] = [];
+//       for (let product of this.cart) {
+//         if (product.id === id) {
+//           newCart.push({ ...product, count: product.count + 1 });
+//         } else {
+//           newCart.push(product);
+//         }
+//       }
+//       this.cart = newCart;
+//     } else {
+//       this.cart.push({ ...product, count: 1 });
+//       console.log('else');
+//     }
+//   }
+//   console.log(this.cart);
+//   // this.storageService.saveCartProducts(this.cart);
+// }
+
+// delCartProduct(id: number) {
+//   this.storageService.removeProduct(id);
+//   console.log('deleted');
+// }
+// checkOut(){
+//   this.storageService.loadOrders(this.orders);
+// }

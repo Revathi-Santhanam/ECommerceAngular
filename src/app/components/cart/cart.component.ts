@@ -15,8 +15,6 @@ import { StorageService } from 'src/app/services/storage.service';
 export class CartComponent {
   cartProducts: Product[] = [];
   carts: Cart[] = [];
- 
-
   constructor(
     private cartService: CartService,
     private storageService: StorageService,
@@ -24,7 +22,7 @@ export class CartComponent {
   ) {
     this.carts = storageService.getCart();
     console.log(this.carts);
-    
+
     for (let c of this.carts) {
       let loggedInUser: User = this.authService.getLoggedInUser();
       if (c.user.id === loggedInUser.id) this.cartProducts = c.cart;
@@ -40,6 +38,6 @@ export class CartComponent {
   }
   checkOut() {
     this.storageService.removeCartProduct();
-    this.carts=[]
+    this.carts = [];
   }
 }
